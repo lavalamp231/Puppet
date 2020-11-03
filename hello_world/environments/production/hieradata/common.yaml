@@ -1,0 +1,32 @@
+packages::installed:
+ - bash-completion
+ - vim
+ - nfs-utils
+ - iotop
+ - ntp 
+ - epel-release 
+ - deltarpm 
+ - mlocate
+ - nmap
+ - tcpdump
+ - nethogs
+ - sysstat 
+ - wget 
+ - git
+ - yum-utils
+ - bind-utils
+ - net-tools
+ - yum-cron
+ - iftop
+
+#### Local Users ####
+
+users::Andrew:
+ - Andrew
+users::uid:
+ - 1000
+users::gid:
+ - 1080
+users:group:
+ - sambagroup
+

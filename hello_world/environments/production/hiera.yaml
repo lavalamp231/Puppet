@@ -1,0 +1,15 @@
+# /etc/puppetlabs/code/environments/production/hiera.yaml
+---
+version: 5
+# specify the default datadir and yaml backend
+defaults:
+    datadir: hieradata
+    data_hash: yaml_data
+# build hierarchy. Note that paths need the file ending!
+hierarchy:
+  - name: "Per-node data, Role, Common"
+    path: "node/%{::clientcert}.yaml"
+  - name: "Per-OS defaults"
+    path: "os/%{facts.os.family}.yaml"
+  - name: "Common data"
+    path: "common.yaml"
