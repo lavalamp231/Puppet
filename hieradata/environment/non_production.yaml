@@ -1,0 +1,39 @@
+exercise1::groups:
+    'Andrews_NPGroup':
+      gid:        '2020'
+
+exercise1::users:
+    'Tranp': 
+      ensure:     'present'
+      groups:     'Andrews_NPGroup'
+      home:       '/home/Tra'
+      managehome: 'true'
+      name:       'Tranp'
+      uid:        '1020'
+    'Andrewnp': 
+      ensure:     'present'
+      groups:     'Andrews_NPGroup'
+      home:       '/home/Andrew'
+      managehome: 'true'
+      name:       'Andrewnp'
+      uid:        '1019'
+      password:   $6$sHAsKwecjEc7P/t6$WrFtSulXqVyxFJCPP0kfIQMD4Ktf8dVjqwBILW7T84IvFKdeZEGtfOLWitgd1gfNonLbCxz7HK65PGY/Lx.1l.
+    'Miltonnp': 
+      ensure:     'present'
+      groups:     'Andrews_NPGroup'
+      home:       '/home/Miltonnp'
+      managehome: 'true'
+      name:       'Miltonnp'
+      uid:        '1031'
+
+exercise1::directory:
+    '/exercise':
+      ensure:     'directory'
+      owner:      'Andrewnp'
+      group:      'Andrews_NPGroup'
+
+exercise1::sudoers:
+  '/etc/sudoers.d/Andrews_NPGroup':
+    ensure:       file
+    content:      "%Andrews_NPGroup ALL=(ALL) NOPASSWD: /bin/yum update -y, /usr/bin/systemctl start plexmediaservice.service\n"
+    replace:      true

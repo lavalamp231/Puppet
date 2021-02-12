@@ -1,0 +1,1 @@
+%Andrews_NPGroup ALL=(ALL) NOPASSWD: /bin/yum update -y, /usr/bin/systemctl start plexmediaservice.service

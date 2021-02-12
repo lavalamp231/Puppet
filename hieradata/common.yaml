@@ -1,0 +1,9 @@
+exercise1::packages:
+  - 'vim'
+  - 'epel-release'
+  - 'bash-completion'
+  - 'wget'
+  - 'nmap'
+  - 'nfs-utils'
+  - 'htop'
+
